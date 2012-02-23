@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  descripcion: MyString
+  priority: 
+  max_date: 2012-02-20
+  finished: false
+  tags: 
+  category: 
+
+two:
+  name: MyString
+  descripcion: MyString
+  priority: 
+  max_date: 2012-02-20
+  finished: false
+  tags: 
+  category: 
