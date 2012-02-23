@@ -3,7 +3,8 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Descripcion</th>
+    <th>Description</th>
+    <th>Priority</th>
     <th>Max date</th>
     <th>Finished</th>
     <th>Category</th>
@@ -13,10 +14,12 @@
   </tr>
 
 <% @tasks.each do |task| %>
-  <tr>
+  <tr>	
+    <td><%= link_to 'Finish' %></td>
     <td><%= task.name %></td>
-    <td><%= task.descripcion %></td>
-    <td><%= task.max_date %></td>
+    <td><%= task.description %></td>
+    <td><%= task.priority %></td>
+    <td><%= display_date(task.max_date) %></td>
     <td><%= task.finished %></td>
     <td><%= task.category.name %></td>
     <td><%= link_to 'Show', task %></td>

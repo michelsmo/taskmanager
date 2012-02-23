@@ -7,12 +7,17 @@
 
 <p>
   <b>Descripcion:</b>
-  <%= @task.descripcion %>
+  <%= @task.description %>
+</p>
+
+<p>
+  <b>Priority:</b>
+  <%= @task.priority %>
 </p>
 
 <p>
   <b>Max date:</b>
-  <%= @task.max_date %>
+  <%= display_date(@task.max_date) %>
 </p>
 
 <p>

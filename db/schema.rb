@@ -14,32 +14,27 @@
 ActiveRecord::Schema.define(:version => 20120222225047) do
 
   create_table "categories", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
+    t.string   "name",        :null => false
+    t.string   "description", :null => false
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "priorities", :force => true do |t|
-    t.string   "level"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "tags", :force => true do |t|
-    t.string   "name"
+    t.string   "name",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "tags_tasks", :id => false, :force => true do |t|
-    t.integer "tag_id"
-    t.integer "task_id"
+    t.integer "tag_id",  :null => false
+    t.integer "task_id", :null => false
   end
 
   create_table "tasks", :force => true do |t|
-    t.string   "name"
-    t.string   "descripcion"
+    t.string   "name",                           :null => false
+    t.string   "description"
+    t.integer  "priority",                       :null => false
     t.date     "max_date"
     t.boolean  "finished",    :default => false
     t.datetime "created_at",                     :null => false

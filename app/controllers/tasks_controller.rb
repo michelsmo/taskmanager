@@ -104,4 +104,13 @@ class TasksController < ApplicationController
     end
   end
   
+  # PUT
+  def finish
+    puts "finish him"
+    @task = Task.find(params[:id])
+    @task.finished = true
+    @task.save
+    
+  end  
+  
 end

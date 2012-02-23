@@ -16,26 +16,33 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :descripcion %><br />
-    <%= f.text_field :descripcion %>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :priority %><br />
+    <%= f.number_field :priority %>
   </div>
   <div class="field">
     <%= f.label :max_date %><br />
     <%= f.date_select :max_date %>
   </div>
-  <div class="field">
-    <%= f.label :categories %><br />
- 	<%= f.select :category_id,  options_from_collection_for_select(@categories, "id", "name"), :prompt => "Select something"  %>
+  <% if @categories!=nil && @categories.length>0 %>
+    <div class="field">
+      <%= f.label :categories %><br />
+ 	  <%= f.select :category_id,  options_from_collection_for_select(@categories, "id", "name"), :prompt => "Select something"  %>
+  <% end %>
   </div>
+  <% if @tags!=nil && @tags.length>0 %>
   <div class="field">
-  <%= f.label :tags %><br />
-	<% @tags.each do |tag| %>
-	<div>
-	  <%= check_box_tag "task[tag_ids][]", tag.id, false %>
-	  <%= tag.name %>
-	</div>
-	<% end %>
-
+    <%= f.label :tags %><br />
+	  <% @tags.each do |tag| %>
+	  <div>
+ 	    <%= check_box_tag "task[tag_ids][]", tag.id, false %>
+	    <%= tag.name %>
+	  </div>
+  	  <% end %>
+  <% end %>
   </div>
   
   <div class="actions">
